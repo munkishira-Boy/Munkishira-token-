@@ -2,108 +2,271 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Kishi Munkishira (KISHI) | Polygon Decentralized Asset</title>
+<title>Kishi Munkishira (KISHI) — Polygon Cultural Asset</title>
 
-<meta name="description" content="Kishi Munkishira (KISHI) is a decentralized crypto asset on Polygon, connected to the Munkidori ecosystem. Transparent tokenomics, locked liquidity and deflation-aware supply." />
-<meta name="keywords" content="Kishi Munkishira, KISHI token, Polygon crypto, decentralized token, Munkidori, Web3 asset, crypto market cap" />
-<meta name="author" content="Kishi Munkishira" />
+<meta name="description" content="Kishi Munkishira (KISHI) is a decentralized cultural asset on Polygon, connected to the physical Munkidori card collection. Real-world ownership triggers on-chain burn mechanics, creating transparent scarcity." />
+<meta name="keywords" content="Kishi Munkishira, KISHI Token, Polygon Crypto, Cultural Token, Munkidori Cards, Physical Cards Crypto, Deflation Token" />
+<meta name="author" content="Kishi Munkishira Foundation" />
 
 <meta property="og:title" content="Kishi Munkishira (KISHI)" />
-<meta property="og:description" content="A decentralized Polygon asset focused on transparency, scarcity and long-term sustainability." />
+<meta property="og:description" content="A cultural crypto asset connected to a physical card collection. Ownership creates on-chain scarcity." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="logo.png" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- SCHEMA FOR SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kishi Munkishira",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/logo.png",
+  "description": "Decentralized cultural asset on Polygon connected to the physical Munkidori card collection."
+}
+</script>
+
 <style>
-body {margin:0;font-family:Inter,Arial,sans-serif;background:#0b0b12;color:#ededed}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#14001f;border-bottom:1px solid #6a1bb1}
-.logo{display:flex;align-items:center}
-.logo img{height:50px;margin-right:12px}
-select{background:#2b0f45;color:white;border:1px solid #6a1bb1;padding:8px;border-radius:6px}
-.hero{text-align:center;padding:90px 20px;background:radial-gradient(circle,#2b0f45,#0b0b12)}
-.hero h1{font-size:3em;color:#f4c86a}
-.hero p{max-width:700px;margin:20px auto;font-size:1.1em;color:#cfcfcf}
-.buttons a{margin:10px;padding:14px 28px;border:1px solid #f4c86a;color:#f4c86a;text-decoration:none;border-radius:8px;transition:.2s}
-.buttons a:hover{background:#f4c86a;color:#0b0b12}
-section{padding:70px 20px;max-width:900px;margin:auto}
-h2{color:#2daae1;margin-bottom:20px}
-.cards{display:flex;gap:15px;flex-wrap:wrap}
-.card{flex:1;background:#14001f;padding:20px;border:1px solid #2daae1;border-radius:12px;min-width:200px}
-.marketcap{background:#14001f;border-top:1px solid #6a1bb1;border-bottom:1px solid #6a1bb1}
-.cap-box{text-align:center}
-.progress-bar{width:100%;background:#2b0f45;border-radius:12px;height:22px;margin:15px 0}
-#progress{height:100%;width:0%;background:linear-gradient(90deg,#2daae1,#f4c86a);border-radius:12px}
-.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-iframe{width:100%;height:320px;border:none;border-radius:12px;background:black}
-footer{text-align:center;padding:40px;background:#14001f;border-top:1px solid #6a1bb1;font-size:.9em;color:#aaa}
-.copy{cursor:pointer;color:#f4c86a}
-a.link{color:#2daae1;text-decoration:none}
+:root {
+  --gold:#d6b26a;
+  --blue:#2daae1;
+  --bg:#08070c;
+  --panel:#120f18;
+  --border:#3a2f4f;
+}
+
+*{box-sizing:border-box}
+body {
+  margin:0;
+  font-family: "Segoe UI", Inter, system-ui, sans-serif;
+  background:var(--bg);
+  color:#eaeaea;
+  line-height:1.6;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:rgba(10,8,15,0.95);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.brand img {
+  height:48px;
+}
+
+.brand span {
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+select {
+  background:var(--panel);
+  color:white;
+  border:1px solid var(--border);
+  padding:8px 12px;
+  border-radius:8px;
+}
+
+.hero {
+  padding:120px 20px;
+  text-align:center;
+  background:
+    radial-gradient(circle at top, rgba(214,178,106,0.15), transparent 60%),
+    radial-gradient(circle at bottom, rgba(45,170,225,0.15), transparent 60%);
+}
+
+.hero img {
+  height:120px;
+  margin-bottom:30px;
+}
+
+.hero h1 {
+  font-size:3.2em;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.hero p {
+  max-width:700px;
+  margin:auto;
+  font-size:1.1em;
+  color:#ccc;
+}
+
+.buttons {
+  margin-top:40px;
+}
+
+.buttons a {
+  display:inline-block;
+  margin:10px;
+  padding:14px 34px;
+  border-radius:10px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.buttons a:hover {
+  background:var(--gold);
+  color:#000;
+}
+
+section {
+  max-width:1000px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+h2 {
+  color:var(--blue);
+  margin-bottom:30px;
+  letter-spacing:1px;
+}
+
+.panel {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:30px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.stat {
+  background:#0c0a12;
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.market-box {
+  text-align:center;
+}
+
+.progress {
+  width:100%;
+  height:22px;
+  background:#1a1424;
+  border-radius:20px;
+  margin:20px 0;
+  overflow:hidden;
+}
+
+.progress div {
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--blue),var(--gold));
+}
+
+.charts {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+iframe {
+  width:100%;
+  height:420px;
+  border:none;
+  border-radius:16px;
+  background:black;
+}
+
+.copy {
+  color:var(--gold);
+  cursor:pointer;
+}
+
+footer {
+  padding:60px 20px;
+  background:#0b0911;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:#aaa;
+}
+
+a.link {
+  color:var(--blue);
+  text-decoration:none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="Kishi Munkishira Logo">
-    <strong>Kishi Munkishira</strong>
+  <div class="brand">
+    <img src="logo.png" alt="Kishi Logo">
+    <span>KISHI MUNKISHIRA</span>
   </div>
-
-  <select id="langSwitcher">
+  <select id="lang">
     <option value="en">EN</option>
     <option value="it">IT</option>
-    <option value="zh">中文</option>
-    <option value="ru">RU</option>
-    <option value="es">ES</option>
-    <option value="fr">FR</option>
-    <option value="de">DE</option>
-    <option value="pt">PT</option>
-    <option value="hi">HI</option>
-    <option value="tl">TL</option>
   </select>
 </header>
 
-<section class="hero">
-  <h1 data-i18n="hero_title"></h1>
-  <p data-i18n="hero_subtitle"></p>
+<div class="hero">
+  <img src="logo.png" alt="Kishi Emblem">
+  <h1 data-i18n="title"></h1>
+  <p data-i18n="subtitle"></p>
   <div class="buttons">
-    <a href="#contract" data-i18n="view_contract"></a>
-    <a href="#whitepaper" data-i18n="view_whitepaper"></a>
+    <a href="#market" data-i18n="market_btn"></a>
+    <a href="#whitepaper" data-i18n="whitepaper_btn"></a>
   </div>
-</section>
+</div>
 
 <section>
   <h2 data-i18n="about_title"></h2>
-  <p data-i18n="about_text"></p>
+  <div class="panel">
+    <p data-i18n="about_text"></p>
+  </div>
 </section>
 
 <section>
   <h2 data-i18n="munkidori_title"></h2>
-  <p data-i18n="munkidori_text"></p>
+  <div class="panel">
+    <p data-i18n="munkidori_text"></p>
+  </div>
 </section>
 
 <section>
-  <h2 data-i18n="tokenomics_title"></h2>
-  <div class="cards">
-    <div class="card">Token Name: Kishi Munkishira</div>
-    <div class="card">Symbol: KISHI</div>
-    <div class="card">Network: Polygon</div>
-    <div class="card">Supply: Dynamic</div>
+  <h2 data-i18n="burn_title"></h2>
+  <div class="panel">
+    <p data-i18n="burn_text"></p>
   </div>
-
-  <h3 data-i18n="burn_title"></h3>
-  <p data-i18n="burn_text"></p>
 </section>
 
-<section class="marketcap">
-  <h2>Market Capitalization</h2>
-  <div class="cap-box">
+<section id="market">
+  <h2>Market Overview</h2>
+  <div class="panel market-box">
     <p>Price: $<span id="price">--</span></p>
-    <p>Circulating Supply: <span id="supply">--</span></p>
-    <p><strong>Market Cap: $<span id="marketcap">--</span></strong></p>
-    <div class="progress-bar"><div id="progress"></div></div>
-    <p>Target: $<span id="target">--</span></p>
+    <p>Supply: <span id="supply">--</span></p>
+    <p><strong>Market Cap: $<span id="cap">--</span></strong></p>
+
+    <div class="progress">
+      <div id="bar"></div>
+    </div>
+    <p>Next Target: $<span id="target">--</span></p>
   </div>
 </section>
 
@@ -116,131 +279,125 @@ a.link{color:#2daae1;text-decoration:none}
   </div>
 </section>
 
-<section id="contract">
-  <h2 data-i18n="security_title"></h2>
-  <ul>
-    <li data-i18n="contract_renounced"></li>
-    <li data-i18n="liquidity_locked"></li>
-    <li>
-      PolygonScan:
-      <a class="link" target="_blank"
-      href="https://polygonscan.com/token/0xa6a2ff1c65152030493030bd4db28d73b53db05c">
-      View Token</a>
-    </li>
-  </ul>
+<section>
+  <h2 data-i18n="objectives_title"></h2>
+  <div class="grid">
+    <div class="stat" data-i18n="obj1"></div>
+    <div class="stat" data-i18n="obj2"></div>
+    <div class="stat" data-i18n="obj3"></div>
+    <div class="stat" data-i18n="obj4"></div>
+    <div class="stat" data-i18n="obj5"></div>
+  </div>
 </section>
 
 <section id="whitepaper">
-  <h2>Whitepaper</h2>
-  <p>
-    The official whitepaper describes the economic model, ecosystem design,
-    supply mechanics, burn logic and long-term governance principles of
-    Kishi Munkishira.
-  </p>
-  <p>
-    <a class="link" href="#download" onclick="alert('You can export this section as PDF using your browser print feature.')">
-      Download Whitepaper (PDF)
-    </a>
-  </p>
+  <h2 data-i18n="security_title"></h2>
+  <div class="panel">
+    <p data-i18n="security_text"></p>
+    <p>
+      Contract:
+      <span class="copy" id="copy">
+        0xa6a2ff1c65152030493030bd4db28d73b53db05c
+      </span>
+    </p>
+    <p>
+      <a class="link" target="_blank"
+      href="https://polygonscan.com/token/0xa6a2ff1c65152030493030bd4db28d73b53db05c">
+      View on PolygonScan
+      </a>
+    </p>
+  </div>
 </section>
 
 <footer>
-  <p>
-    Contract:
-    <span id="contractAddress" class="copy">
-      0xa6a2ff1c65152030493030bd4db28d73b53db05c
-    </span>
-  </p>
-  <p>© Kishi Munkishira — Polygon Network</p>
+  <p>© Kishi Munkishira Foundation — Polygon Network</p>
 </footer>
 
 <script>
-// ===== CONFIG =====
 const SUPPLY = 1000000000;
 const CONTRACT = "0xa6a2ff1c65152030493030bd4db28d73b53db05c";
 
-// ===== COPY CONTRACT =====
-document.getElementById("contractAddress").onclick = () => {
+document.getElementById("copy").onclick = () => {
   navigator.clipboard.writeText(CONTRACT);
   alert("Contract copied");
 };
 
-// ===== MARKET CAP =====
-async function fetchPrice() {
+async function loadMarket() {
   try {
-    const res = await fetch("https://api.dexscreener.com/latest/dex/search?q=KISHI");
-    const data = await res.json();
-    const price = parseFloat(data.pairs[0].priceUsd);
+    const r = await fetch("https://api.dexscreener.com/latest/dex/search?q=KISHI");
+    const d = await r.json();
+    const price = parseFloat(d.pairs[0].priceUsd);
 
     document.getElementById("price").innerText = price.toFixed(6);
     document.getElementById("supply").innerText = SUPPLY.toLocaleString();
 
-    const marketCap = price * SUPPLY;
-    document.getElementById("marketcap").innerText = marketCap.toLocaleString();
+    const cap = price * SUPPLY;
+    document.getElementById("cap").innerText = cap.toLocaleString();
 
     let target = 1000000;
-    if (marketCap > 1000000) target = 10000000;
-    if (marketCap > 10000000) target = 50000000;
-    if (marketCap > 50000000) target = 100000000;
-    if (marketCap > 100000000) target = 250000000;
+    if(cap > 1000000) target = 10000000;
+    if(cap > 10000000) target = 50000000;
+    if(cap > 50000000) target = 100000000;
 
     document.getElementById("target").innerText = target.toLocaleString();
-    document.getElementById("progress").style.width =
-      Math.min((marketCap / target) * 100, 100) + "%";
-  } catch {
-    console.log("DEX not ready");
-  }
+    document.getElementById("bar").style.width = Math.min((cap/target)*100,100)+"%";
+  } catch {}
 }
 
-fetchPrice();
-setInterval(fetchPrice, 30000);
+loadMarket();
+setInterval(loadMarket,30000);
 
-// ===== TRANSLATIONS (EN + IT sample, fallback EN) =====
-const translations = {
+const t = {
   en: {
-    hero_title: "Kishi Munkishira",
-    hero_subtitle: "A decentralized crypto asset on Polygon, focused on transparency, scarcity and long-term sustainability.",
-    view_contract: "View Contract",
-    view_whitepaper: "View Whitepaper",
-    about_title: "What is Kishi Munkishira",
-    about_text: "Kishi Munkishira is a decentralized cryptocurrency designed to represent value, identity and scarcity within a digital ecosystem connected to the Munkidori collection.",
-    munkidori_title: "Connection with the Munkidori Collection",
-    munkidori_text: "The token functions as the economic layer of the Munkidori ecosystem, aligning collectors and holders through transparent on-chain economics.",
-    tokenomics_title: "Tokenomics",
-    burn_title: "Burn Mechanism",
-    burn_text: "Burn events reduce circulating supply through verifiable on-chain transfers to an irrecoverable address, creating deflation-aware market dynamics.",
-    security_title: "Security & Transparency",
-    contract_renounced: "Contract ownership has been permanently renounced.",
-    liquidity_locked: "Liquidity is locked for a renewable five-year period and publicly verifiable."
+    title:"Kishi Munkishira",
+    subtitle:"A decentralized cultural asset on Polygon, where physical ownership creates on-chain scarcity.",
+    market_btn:"Market Overview",
+    whitepaper_btn:"Security & Contract",
+    about_title:"Purpose of the Project",
+    about_text:"Kishi Munkishira exists as a bridge between physical cultural ownership and decentralized digital value. It was created to transform a private physical card collection into an on-chain economic system where real-world possession directly impacts token scarcity and supply dynamics.",
+    munkidori_title:"The Munkidori Card Collection",
+    munkidori_text:"Munkidori is a physical, non-NFT card collection inspired by mythic and symbolic design. Each card represents cultural value and artistic identity. The creator retains possession of the cards, and their growing collection serves as a direct driver of the KISHI burn mechanism.",
+    burn_title:"Scarcity & Burn Logic",
+    burn_text:"Every time a new Munkidori card is added to the creator's physical collection, a corresponding amount of KISHI is permanently removed from circulation. This process is executed through verifiable on-chain transfers to an irrecoverable address, ensuring that physical cultural growth results in transparent digital scarcity.",
+    objectives_title:"Project Objectives",
+    obj1:"Recognition on CoinGecko and CoinMarketCap",
+    obj2:"Wallet integration and token verification",
+    obj3:"Public marketplace showcasing the Munkidori card collection",
+    obj4:"Foundation-style transparency and documentation",
+    obj5:"Long-term governance and ecosystem expansion",
+    security_title:"Security & Transparency",
+    security_text:"The KISHI contract operates on the Polygon network. Ownership has been renounced and liquidity is locked in renewable five-year cycles. All economic actions, including burn events and liquidity status, remain publicly verifiable on-chain."
   },
   it: {
-    hero_title: "Kishi Munkishira",
-    hero_subtitle: "Un asset decentralizzato su Polygon, focalizzato su trasparenza, scarsità e sostenibilità a lungo termine.",
-    view_contract: "Vedi Contratto",
-    view_whitepaper: "Vedi Whitepaper",
-    about_title: "Cos'è Kishi Munkishira",
-    about_text: "Kishi Munkishira è una criptovaluta decentralizzata progettata per rappresentare valore, identità e scarsità in un ecosistema digitale collegato alla collezione Munkidori.",
-    munkidori_title: "Connessione con la Collezione Munkidori",
-    munkidori_text: "Il token funge da livello economico dell'ecosistema Munkidori, allineando collezionisti e detentori attraverso un'economia on-chain trasparente.",
-    tokenomics_title: "Tokenomics",
-    burn_title: "Meccanismo di Burn",
-    burn_text: "Gli eventi di burn riducono l'offerta circolante tramite trasferimenti on-chain verificabili verso un indirizzo irrecuperabile.",
-    security_title: "Sicurezza e Trasparenza",
-    contract_renounced: "La proprietà del contratto è stata permanentemente rinunciata.",
-    liquidity_locked: "La liquidità è bloccata per un periodo rinnovabile di cinque anni e verificabile pubblicamente."
+    title:"Kishi Munkishira",
+    subtitle:"Un asset culturale decentralizzato su Polygon, dove il possesso fisico crea scarsità on-chain.",
+    market_btn:"Mercato",
+    whitepaper_btn:"Sicurezza & Contratto",
+    about_title:"Scopo del Progetto",
+    about_text:"Kishi Munkishira esiste come ponte tra il possesso culturale fisico e il valore digitale decentralizzato. È stato creato per trasformare una collezione privata di carte fisiche in un sistema economico on-chain dove il possesso reale influisce direttamente sulla scarsità del token.",
+    munkidori_title:"Collezione di Carte Munkidori",
+    munkidori_text:"Munkidori è una collezione fisica non NFT ispirata a design mitici e simbolici. Ogni carta rappresenta valore culturale e identità artistica. Il creatore mantiene il possesso delle carte, e la crescita della collezione guida direttamente il meccanismo di burn di KISHI.",
+    burn_title:"Logica di Scarsità & Burn",
+    burn_text:"Ogni volta che una nuova carta Munkidori viene aggiunta alla collezione fisica del creatore, una quantità corrispondente di KISHI viene rimossa permanentemente dalla circolazione. Questo processo avviene tramite trasferimenti on-chain verificabili verso un indirizzo irrecuperabile.",
+    objectives_title:"Obiettivi del Progetto",
+    obj1:"Riconoscimento su CoinGecko e CoinMarketCap",
+    obj2:"Integrazione con wallet e verifica del token",
+    obj3:"Marketplace pubblico per mostrare la collezione Munkidori",
+    obj4:"Struttura di fondazione e documentazione trasparente",
+    obj5:"Espansione dell'ecosistema e governance futura",
+    security_title:"Sicurezza & Trasparenza",
+    security_text:"Il contratto KISHI opera sulla rete Polygon. La proprietà è stata rinunciata e la liquidità è bloccata in cicli rinnovabili di cinque anni. Tutte le azioni economiche sono verificabili pubblicamente on-chain."
   }
 };
 
-const switcher = document.getElementById("langSwitcher");
-function loadLang(lang) {
-  const dict = translations[lang] || translations.en;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key]) el.innerText = dict[key];
+function setLang(l){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.dataset.i18n;
+    if(t[l][k]) el.innerText = t[l][k];
   });
 }
-switcher.addEventListener("change", e => loadLang(e.target.value));
-loadLang("en");
+document.getElementById("lang").onchange = e => setLang(e.target.value);
+setLang("en");
 </script>
 
 </body>
