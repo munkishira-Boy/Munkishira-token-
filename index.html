@@ -1,226 +1,247 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Munkishira | Chaos Token Project</title>
-    <style>
-        :root {
-            --primary: #ff8c00; /* Arancione Monero Style */
-            --bg: #0a0a0a;
-            --card-bg: #151515;
-            --text: #e0e0e0;
-        }
+<meta charset="UTF-8" />
+<title>Kishi Munkishira (KISHI) | Polygon Decentralized Asset</title>
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
+<meta name="description" content="Kishi Munkishira (KISHI) is a decentralized crypto asset on Polygon, connected to the Munkidori ecosystem. Transparent tokenomics, locked liquidity and deflation-aware supply." />
+<meta name="keywords" content="Kishi Munkishira, KISHI token, Polygon crypto, decentralized token, Munkidori, Web3 asset, crypto market cap" />
+<meta name="author" content="Kishi Munkishira" />
 
-        /* Header e Nav */
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
-            background: rgba(10, 10, 10, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+<meta property="og:title" content="Kishi Munkishira (KISHI)" />
+<meta property="og:description" content="A decentralized Polygon asset focused on transparency, scarcity and long-term sustainability." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="logo.png" />
 
-        .logo-text {
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        /* Sezione Hero */
-        .hero {
-            text-align: center;
-            padding: 80px 5%;
-            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--primary);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Dashboard Grafici */
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 5%;
-        }
-
-        .chart-card {
-            background: var(--card-bg);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .chart-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .chart-placeholder {
-            height: 200px;
-            background: #202020;
-            margin: 15px 0;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Simulazione grafico con CSS */
-        .bar { width: 10px; background: var(--primary); margin: 2px; align-self: flex-end; animation: grow 2s infinite alternate; }
-        @keyframes grow { from { height: 10%; } to { height: 80%; } }
-
-        /* Info Sezioni */
-        .info-section {
-            padding: 40px 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .info-box h2 {
-            color: var(--primary);
-            border-left: 4px solid var(--primary);
-            padding-left: 15px;
-        }
-
-        .stats-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .stats-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #222;
-        }
-
-        .stats-list span {
-            float: right;
-            color: var(--primary);
-            font-family: monospace;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .info-section { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.2rem; }
-        }
-    </style>
+<style>
+body {margin:0;font-family:Inter,Arial,sans-serif;background:#0b0b12;color:#ededed}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#14001f;border-bottom:1px solid #6a1bb1}
+.logo{display:flex;align-items:center}
+.logo img{height:50px;margin-right:12px}
+select{background:#2b0f45;color:white;border:1px solid #6a1bb1;padding:8px;border-radius:6px}
+.hero{text-align:center;padding:90px 20px;background:radial-gradient(circle,#2b0f45,#0b0b12)}
+.hero h1{font-size:3em;color:#f4c86a}
+.hero p{max-width:700px;margin:20px auto;font-size:1.1em;color:#cfcfcf}
+.buttons a{margin:10px;padding:14px 28px;border:1px solid #f4c86a;color:#f4c86a;text-decoration:none;border-radius:8px;transition:.2s}
+.buttons a:hover{background:#f4c86a;color:#0b0b12}
+section{padding:70px 20px;max-width:900px;margin:auto}
+h2{color:#2daae1;margin-bottom:20px}
+.cards{display:flex;gap:15px;flex-wrap:wrap}
+.card{flex:1;background:#14001f;padding:20px;border:1px solid #2daae1;border-radius:12px;min-width:200px}
+.marketcap{background:#14001f;border-top:1px solid #6a1bb1;border-bottom:1px solid #6a1bb1}
+.cap-box{text-align:center}
+.progress-bar{width:100%;background:#2b0f45;border-radius:12px;height:22px;margin:15px 0}
+#progress{height:100%;width:0%;background:linear-gradient(90deg,#2daae1,#f4c86a);border-radius:12px}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+iframe{width:100%;height:320px;border:none;border-radius:12px;background:black}
+footer{text-align:center;padding:40px;background:#14001f;border-top:1px solid #6a1bb1;font-size:.9em;color:#aaa}
+.copy{cursor:pointer;color:#f4c86a}
+a.link{color:#2daae1;text-decoration:none}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo-text">MUNKISHIRA</div>
-        <div>
-            <span style="color: #666; font-size: 0.8rem;">NETWORK STATUS: <span style="color: #00ff00;">ONLINE</span></span>
-        </div>
-    </header>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Kishi Munkishira Logo">
+    <strong>Kishi Munkishira</strong>
+  </div>
 
-    <section class="hero">
-        <h1>CHAOS TOKEN</h1>
-        <p>L'algoritmo di entropia applicato alla finanza decentralizzata. Il progetto che sfrutta il caos per generare valore.</p>
-    </section>
+  <select id="langSwitcher">
+    <option value="en">EN</option>
+    <option value="it">IT</option>
+    <option value="zh">中文</option>
+    <option value="ru">RU</option>
+    <option value="es">ES</option>
+    <option value="fr">FR</option>
+    <option value="de">DE</option>
+    <option value="pt">PT</option>
+    <option value="hi">HI</option>
+    <option value="tl">TL</option>
+  </select>
+</header>
 
-    <section class="dashboard">
-        <div class="chart-card">
-            <h3>Flusso di Liquidità</h3>
-            <div class="chart-placeholder">
-                <div class="bar" style="animation-delay: 0.1s"></div>
-                <div class="bar" style="animation-delay: 0.3s"></div>
-                <div class="bar" style="animation-delay: 0.5s"></div>
-                <div class="bar" style="animation-delay: 0.2s"></div>
-                <div class="bar" style="animation-delay: 0.4s"></div>
-            </div>
-            <p>Monitoraggio Real-time Cross-Chain</p>
-        </div>
+<section class="hero">
+  <h1 data-i18n="hero_title"></h1>
+  <p data-i18n="hero_subtitle"></p>
+  <div class="buttons">
+    <a href="#contract" data-i18n="view_contract"></a>
+    <a href="#whitepaper" data-i18n="view_whitepaper"></a>
+  </div>
+</section>
 
-        <div class="chart-card">
-            <h3>Indice di Scarsità</h3>
-            <div class="chart-placeholder">
-                <div style="width: 100px; height: 100px; border-radius: 50%; border: 8px solid var(--primary); border-top-color: transparent; animation: spin 2s linear infinite;"></div>
-            </div>
-            <p>Burn Rate: 2.5% per transazione</p>
-        </div>
+<section>
+  <h2 data-i18n="about_title"></h2>
+  <p data-i18n="about_text"></p>
+</section>
 
-        <div class="chart-card">
-            <h3>Chaos Resilience</h3>
-            <div class="chart-placeholder">
-                <svg width="100%" height="100%" viewBox="0 0 100 50">
-                    <path d="M0,40 Q25,10 50,30 T100,20" fill="none" stroke="#ff8c00" stroke-width="2" />
-                </svg>
-            </div>
-            <p>Stabilità Algoritmica vs Volatilità</p>
-        </div>
-    </section>
+<section>
+  <h2 data-i18n="munkidori_title"></h2>
+  <p data-i18n="munkidori_text"></p>
+</section>
 
-    <section class="info-section">
-        <div class="info-box">
-            <h2>Specifiche Tecniche</h2>
-            <p>Il Chaos Token non è una semplice moneta, ma un organismo digitale che reagisce alle inefficienze dei mercati esterni.</p>
-            <ul class="stats-list">
-                <li>Nome del Progetto: <span>Munkishira</span></li>
-                <li>Token Symbol: <span>KISHI</span></li>
-                <li>Algoritmo: <span>Proof of Chaos (PoC)</span></li>
-                <li>Network: <span>Multi-chain Bridge</span></li>
-            </ul>
-        </div>
-        <div class="info-box">
-            <h2>Tokenomics Dynamica</h2>
-            <p>Il sistema di minting e burning è regolato da oracoli esterni che misurano l'entropia delle principali coppie di scambio mondiali.</p>
-            <ul class="stats-list">
-                <li>Total Supply: <span>Dynamic</span></li>
-                <li>Auto-Burn: <span>Attivo</span></li>
-                <li>Community Reward: <span>8%</span></li>
-                <li>Dev Fund: <span>Locked</span></li>
-            </ul>
-        </div>
-    </section>
+<section>
+  <h2 data-i18n="tokenomics_title"></h2>
+  <div class="cards">
+    <div class="card">Token Name: Kishi Munkishira</div>
+    <div class="card">Symbol: KISHI</div>
+    <div class="card">Network: Polygon</div>
+    <div class="card">Supply: Dynamic</div>
+  </div>
 
-    <footer>
-        &copy; 2024 MUNKISHIRA PROJECT - Chaos Token Engineering<br>
-        Tutti i diritti riservati. Progetto criptato.
-    </footer>
+  <h3 data-i18n="burn_title"></h3>
+  <p data-i18n="burn_text"></p>
+</section>
 
-    <style>
-        @keyframes spin { to { transform: rotate(360deg); } }
-    </style>
+<section class="marketcap">
+  <h2>Market Capitalization</h2>
+  <div class="cap-box">
+    <p>Price: $<span id="price">--</span></p>
+    <p>Circulating Supply: <span id="supply">--</span></p>
+    <p><strong>Market Cap: $<span id="marketcap">--</span></strong></p>
+    <div class="progress-bar"><div id="progress"></div></div>
+    <p>Target: $<span id="target">--</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>Live DEX Markets</h2>
+  <div class="charts">
+    <iframe src="https://dexscreener.com/polygon/0xa6a2ff1c65152030493030bd4db28d73b53db05c"></iframe>
+    <iframe src="https://dexscreener.com/polygon"></iframe>
+    <iframe src="https://dexscreener.com/polygon"></iframe>
+  </div>
+</section>
+
+<section id="contract">
+  <h2 data-i18n="security_title"></h2>
+  <ul>
+    <li data-i18n="contract_renounced"></li>
+    <li data-i18n="liquidity_locked"></li>
+    <li>
+      PolygonScan:
+      <a class="link" target="_blank"
+      href="https://polygonscan.com/token/0xa6a2ff1c65152030493030bd4db28d73b53db05c">
+      View Token</a>
+    </li>
+  </ul>
+</section>
+
+<section id="whitepaper">
+  <h2>Whitepaper</h2>
+  <p>
+    The official whitepaper describes the economic model, ecosystem design,
+    supply mechanics, burn logic and long-term governance principles of
+    Kishi Munkishira.
+  </p>
+  <p>
+    <a class="link" href="#download" onclick="alert('You can export this section as PDF using your browser print feature.')">
+      Download Whitepaper (PDF)
+    </a>
+  </p>
+</section>
+
+<footer>
+  <p>
+    Contract:
+    <span id="contractAddress" class="copy">
+      0xa6a2ff1c65152030493030bd4db28d73b53db05c
+    </span>
+  </p>
+  <p>© Kishi Munkishira — Polygon Network</p>
+</footer>
+
+<script>
+// ===== CONFIG =====
+const SUPPLY = 1000000000;
+const CONTRACT = "0xa6a2ff1c65152030493030bd4db28d73b53db05c";
+
+// ===== COPY CONTRACT =====
+document.getElementById("contractAddress").onclick = () => {
+  navigator.clipboard.writeText(CONTRACT);
+  alert("Contract copied");
+};
+
+// ===== MARKET CAP =====
+async function fetchPrice() {
+  try {
+    const res = await fetch("https://api.dexscreener.com/latest/dex/search?q=KISHI");
+    const data = await res.json();
+    const price = parseFloat(data.pairs[0].priceUsd);
+
+    document.getElementById("price").innerText = price.toFixed(6);
+    document.getElementById("supply").innerText = SUPPLY.toLocaleString();
+
+    const marketCap = price * SUPPLY;
+    document.getElementById("marketcap").innerText = marketCap.toLocaleString();
+
+    let target = 1000000;
+    if (marketCap > 1000000) target = 10000000;
+    if (marketCap > 10000000) target = 50000000;
+    if (marketCap > 50000000) target = 100000000;
+    if (marketCap > 100000000) target = 250000000;
+
+    document.getElementById("target").innerText = target.toLocaleString();
+    document.getElementById("progress").style.width =
+      Math.min((marketCap / target) * 100, 100) + "%";
+  } catch {
+    console.log("DEX not ready");
+  }
+}
+
+fetchPrice();
+setInterval(fetchPrice, 30000);
+
+// ===== TRANSLATIONS (EN + IT sample, fallback EN) =====
+const translations = {
+  en: {
+    hero_title: "Kishi Munkishira",
+    hero_subtitle: "A decentralized crypto asset on Polygon, focused on transparency, scarcity and long-term sustainability.",
+    view_contract: "View Contract",
+    view_whitepaper: "View Whitepaper",
+    about_title: "What is Kishi Munkishira",
+    about_text: "Kishi Munkishira is a decentralized cryptocurrency designed to represent value, identity and scarcity within a digital ecosystem connected to the Munkidori collection.",
+    munkidori_title: "Connection with the Munkidori Collection",
+    munkidori_text: "The token functions as the economic layer of the Munkidori ecosystem, aligning collectors and holders through transparent on-chain economics.",
+    tokenomics_title: "Tokenomics",
+    burn_title: "Burn Mechanism",
+    burn_text: "Burn events reduce circulating supply through verifiable on-chain transfers to an irrecoverable address, creating deflation-aware market dynamics.",
+    security_title: "Security & Transparency",
+    contract_renounced: "Contract ownership has been permanently renounced.",
+    liquidity_locked: "Liquidity is locked for a renewable five-year period and publicly verifiable."
+  },
+  it: {
+    hero_title: "Kishi Munkishira",
+    hero_subtitle: "Un asset decentralizzato su Polygon, focalizzato su trasparenza, scarsità e sostenibilità a lungo termine.",
+    view_contract: "Vedi Contratto",
+    view_whitepaper: "Vedi Whitepaper",
+    about_title: "Cos'è Kishi Munkishira",
+    about_text: "Kishi Munkishira è una criptovaluta decentralizzata progettata per rappresentare valore, identità e scarsità in un ecosistema digitale collegato alla collezione Munkidori.",
+    munkidori_title: "Connessione con la Collezione Munkidori",
+    munkidori_text: "Il token funge da livello economico dell'ecosistema Munkidori, allineando collezionisti e detentori attraverso un'economia on-chain trasparente.",
+    tokenomics_title: "Tokenomics",
+    burn_title: "Meccanismo di Burn",
+    burn_text: "Gli eventi di burn riducono l'offerta circolante tramite trasferimenti on-chain verificabili verso un indirizzo irrecuperabile.",
+    security_title: "Sicurezza e Trasparenza",
+    contract_renounced: "La proprietà del contratto è stata permanentemente rinunciata.",
+    liquidity_locked: "La liquidità è bloccata per un periodo rinnovabile di cinque anni e verificabile pubblicamente."
+  }
+};
+
+const switcher = document.getElementById("langSwitcher");
+function loadLang(lang) {
+  const dict = translations[lang] || translations.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) el.innerText = dict[key];
+  });
+}
+switcher.addEventListener("change", e => loadLang(e.target.value));
+loadLang("en");
+</script>
 
 </body>
 </html>
