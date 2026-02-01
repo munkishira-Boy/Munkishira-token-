@@ -1,189 +1,332 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Munkishira | Munkiboy Official</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #f39c12; 
-            --bg: #0b0b0b;
-            --text: #ffffff;
-            --secondary: #1a1a1a;
-            --accent: #27ae60;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Munkishira | Physical-Digital Hybrid Protocol</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            line-height: 1.6;
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.9);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary);
-        }
+<style>
+:root {
+    --primary: #f39c12; 
+    --bg: #050505;
+    --text: #ffffff;
+    --secondary: #111111;
+    --accent: #27ae60;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    color: var(--text);
+    background: #000;
+}
 
-        .hero {
-            text-align: center;
-            padding: 80px 5%;
-            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
-        }
+/* BACKGROUND IMAGE FULL PAGE */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background.png") center center / cover no-repeat;
+    z-index: -2;
+}
 
-        .hero h1 { font-size: 3.5rem; margin: 0; color: var(--primary); text-shadow: 2px 2px 10px rgba(243, 156, 18, 0.3); }
-        .hero p { font-size: 1.3rem; color: #ddd; max-width: 800px; margin: 20px auto; }
+/* DARK OVERLAY FOR READABILITY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: -1;
+}
 
-        .contract-container {
-            margin: 30px auto;
-            max-width: 700px;
-        }
+/* HEADER */
+header {
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+    backdrop-filter: blur(10px);
+}
 
-        .contract-box {
-            background: var(--secondary);
-            padding: 15px 25px;
-            border-radius: 50px;
-            border: 1px solid #444;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 
-        .contract-box:hover { border-color: var(--primary); background: #222; }
-        .contract-box code { font-size: 0.9rem; color: var(--primary); overflow-wrap: anywhere; }
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: 0.3s;
+}
 
-        .status-badge {
-            background: var(--accent);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            box-shadow: 0 0 15px rgba(39, 174, 96, 0.4);
-        }
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--primary);
+}
 
-        .section { padding: 60px 5%; max-width: 1200px; margin: auto; }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 140px 5% 120px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: -2px;
+    text-shadow: 0px 0px 30px rgba(0,0,0,0.8);
+}
 
-        .info-card {
-            background: #151515;
-            padding: 40px;
-            border-radius: 25px;
-            border-bottom: 4px solid var(--primary);
-            transition: transform 0.3s;
-        }
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 20px auto;
+}
 
-        .info-card:hover { transform: translateY(-10px); }
-        .info-card h3 { color: var(--primary); font-size: 1.5rem; margin-top: 0; }
-        .info-card i { font-size: 2rem; margin-bottom: 15px; color: var(--primary); }
+.btn-x {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
 
-        .chart-section { background: #000; padding: 40px 0; }
-        .chart-container {
-            width: 90%;
-            max-width: 1100px;
-            height: 650px;
-            margin: auto;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+.btn-x:hover {
+    background: var(--primary);
+    color: black;
+    transform: scale(1.05);
+}
 
-        .footer { text-align: center; padding: 60px; color: #666; border-top: 1px solid #222; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .chart-container { height: 450px; }
-        }
-    </style>
+/* SECTIONS */
+.section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.whitepaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.wp-card {
+    background: rgba(15,15,15,0.9);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid #222;
+    backdrop-filter: blur(10px);
+}
+
+.wp-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.wp-card p {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+/* TOKENOMICS */
+.tokenomics {
+    background: var(--primary);
+    color: black;
+    border-radius: 30px;
+    padding: 50px;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.tk-item h4 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.tk-item p {
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* CONTRACT */
+.contract-section {
+    text-align: center;
+    padding: 40px;
+    background: rgba(15,15,15,0.9);
+    border-radius: 20px;
+    margin-top: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.copy-box {
+    background: #000;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    font-family: monospace;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.copy-box:hover {
+    background: var(--primary);
+    color: black;
+}
+
+/* CHART */
+.chart-box {
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #222;
+    height: 700px;
+    margin-top: 40px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 60px;
+    border-top: 1px solid #222;
+    color: #666;
+    background: rgba(0,0,0,0.8);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .chart-box {
+        height: 500px;
+    }
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">MUNKISHIRA</div>
-        <div class="status-badge"><i class="fas fa-shield-alt"></i> LIQUIDITY LOCKED</div>
-    </header>
+<!-- BACKGROUND -->
+<div class="background"></div>
+<div class="overlay"></div>
 
-    <section class="hero">
-        <h1>MUNKIBOY PROTOCOL</h1>
-        <p>L'unico ecosistema dove il valore digitale di <strong>$KISHI</strong> è legato alla rarità fisica della collezione Munkidori.</p>
-        
-        <div class="contract-container">
-            <p style="font-size: 0.9rem; color: #888; margin-bottom: 10px;">Indirizzo del Contratto (Polygon):</p>
-            <div class="contract-box" onclick="copyContract()">
-                <code id="contractAddr">0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C</code>
-                <i class="fas fa-copy" style="color: var(--primary);"></i>
-            </div>
+<header>
+    <div class="logo">MUNKISHIRA</div>
+    <div class="nav-links">
+        <a href="https://x.com/Munkishiroboy" target="_blank">TWITTER</a>
+        <a href="#chart">LIVE CHART</a>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>MUNKIBOY'S LEGACY</h1>
+    <p>The first algorithmic protocol where digital scarcity is governed by the growth of a physical Munkidori Master Collection.</p>
+
+    <a href="https://x.com/Munkishiroboy" class="btn-x" target="_blank">
+        <i class="fab fa-x-twitter"></i> Follow Community
+    </a>
+</section>
+
+<section class="section">
+    <div class="whitepaper-grid">
+        <div class="wp-card">
+            <h3>01. Physical Oracle</h3>
+            <p>I am <strong>Munkiboy</strong>. Every time a rare Munkidori card is added to my physical vault, the protocol initiates a "Sacrifice Event" (Manual Burn).</p>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="grid">
-            <div class="info-card">
-                <i class="fas fa-fire-alt"></i>
-                <h3>Burn Reale</h3>
-                <p>Io sono <strong>Munkiboy</strong>. La mia missione è collezionare ogni carta Munkidori. Più la mia collezione cresce, più token vengono rimossi dal mercato per sempre. Scarsità garantita.</p>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-chart-pie"></i>
-                <h3>Liquidità Protetta</h3>
-                <p>La liquidità è bloccata. I bot stanno già scansionando il protocollo, ma il vero potenziale è riservato a chi crede nel progetto fin dalle "Radici".</p>
-            </div>
+        <div class="wp-card">
+            <h3>02. The Burn Engine</h3>
+            <p>As the collection expands, the token supply collapses, creating aggressive deflationary pressure powered by Root Theory.</p>
         </div>
-    </section>
 
-    <section class="chart-section">
-        <h2 style="text-align: center; margin-bottom: 30px;">Live Market Analysis</h2>
-        <div class="chart-container">
-            <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://dexscreener.com/polygon/0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C?embed=1&theme=dark&trades=0&info=0" 
-                style="border:0;">
-            </iframe>
+        <div class="wp-card">
+            <h3>03. Ironclad Safety</h3>
+            <p>Liquidity is locked. Smart contract verified. No mint. No rug. Only legacy.</p>
         </div>
-    </section>
+    </div>
 
-    <footer class="footer">
-        <p>Munkishira Project &copy; 2024 | Built on Polygon Network</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Managed by Munkiboy - Follow the Root Theory</p>
-    </footer>
+    <div class="tokenomics">
+        <div class="tk-item">
+            <h4>300K</h4>
+            <p>Total Supply</p>
+        </div>
 
-    <script>
-        function copyContract() {
-            const el = document.createElement('textarea');
-            el.value = '0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C';
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('Contratto Copiato!');
-        }
-    </script>
+        <div class="tk-item">
+            <h4>0.8%</h4>
+            <p>Transaction Fee</p>
+        </div>
+
+        <div class="tk-item">
+            <h4>100%</h4>
+            <p>Liquidity Locked</p>
+        </div>
+    </div>
+
+    <div class="contract-section">
+        <h3>OFFICIAL CONTRACT ADDRESS</h3>
+        <div class="copy-box" onclick="copyAddr()">
+            0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C <i class="fas fa-copy"></i>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="chart">
+    <h2 style="text-align:center;">MARKET DATA</h2>
+
+    <div class="chart-box">
+        <iframe 
+            src="https://coinbrain.com/embed/polygon-0xa6a2ff1c65152030493030bd4db28d73b53db05c?theme=dark&chart=1&trades=1"
+            width="100%"
+            height="100%"
+            style="border:none;">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <p>MUNKISHIRA PROJECT © 2024 | POWERED BY POLYGON NETWORK</p>
+    <p>Managed by Munkiboy - Root Theory Foundation</p>
+</footer>
+
+<script>
+function copyAddr() {
+    navigator.clipboard.writeText('0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C');
+    alert('Contract Copied to clipboard!');
+}
+</script>
 
 </body>
 </html>
