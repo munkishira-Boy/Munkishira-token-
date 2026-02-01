@@ -9,21 +9,21 @@
 
 <style>
 :root {
-    --primary: #f39c12;
+    --primary: #f39c12; 
     --bg: #050505;
     --text: #ffffff;
     --secondary: #111111;
+    --accent: #27ae60;
 }
 
-/* BASE */
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
     color: var(--text);
-    background: black;
+    background: #000;
 }
 
-/* BACKGROUND */
+/* BACKGROUND IMAGE FULL PAGE */
 .background {
     position: fixed;
     top: 0;
@@ -34,6 +34,7 @@ body {
     z-index: -2;
 }
 
+/* DARK OVERLAY FOR READABILITY */
 .overlay {
     position: fixed;
     top: 0;
@@ -62,10 +63,10 @@ header {
     font-size: 1.2rem;
     font-weight: 900;
     color: var(--primary);
+    text-transform: uppercase;
     letter-spacing: 3px;
 }
 
-/* NAV */
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -100,7 +101,6 @@ header {
     margin: 20px auto;
 }
 
-/* BUTTON */
 .btn-x {
     background: white;
     color: black;
@@ -117,6 +117,7 @@ header {
 
 .btn-x:hover {
     background: var(--primary);
+    color: black;
     transform: scale(1.05);
 }
 
@@ -127,7 +128,6 @@ header {
     margin: auto;
 }
 
-/* CARDS */
 .whitepaper-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -145,6 +145,12 @@ header {
 .wp-card h3 {
     color: var(--primary);
     margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.wp-card p {
+    color: #aaa;
+    font-size: 1rem;
 }
 
 /* TOKENOMICS */
@@ -155,14 +161,22 @@ header {
     padding: 50px;
     margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
-    flex-wrap: wrap;
 }
 
 .tk-item h4 {
-    font-size: 2.5rem;
     margin: 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.tk-item p {
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 /* CONTRACT */
@@ -172,6 +186,7 @@ header {
     background: rgba(15,15,15,0.9);
     border-radius: 20px;
     margin-top: 40px;
+    backdrop-filter: blur(10px);
 }
 
 .copy-box {
@@ -183,6 +198,7 @@ header {
     cursor: pointer;
     font-family: monospace;
     margin-top: 15px;
+    transition: 0.3s;
 }
 
 .copy-box:hover {
@@ -192,7 +208,7 @@ header {
 
 /* CHART */
 .chart-box {
-    background: black;
+    background: #000;
     border-radius: 30px;
     overflow: hidden;
     border: 1px solid #222;
@@ -214,6 +230,7 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
     }
+
     .chart-box {
         height: 500px;
     }
@@ -222,6 +239,7 @@ footer {
 </head>
 <body>
 
+<!-- BACKGROUND -->
 <div class="background"></div>
 <div class="overlay"></div>
 
@@ -246,17 +264,17 @@ footer {
     <div class="whitepaper-grid">
         <div class="wp-card">
             <h3>01. Physical Oracle</h3>
-            <p>Every time a rare Munkidori card is added to the vault, the protocol initiates a Sacrifice Event.</p>
+            <p>I am <strong>Munkiboy</strong>. Every time a rare Munkidori card is added to my physical vault, the protocol initiates a "Sacrifice Event" (Manual Burn).</p>
         </div>
 
         <div class="wp-card">
             <h3>02. The Burn Engine</h3>
-            <p>Supply collapses as the physical collection expands, creating aggressive deflation.</p>
+            <p>As the collection expands, the token supply collapses, creating aggressive deflationary pressure powered by Root Theory.</p>
         </div>
 
         <div class="wp-card">
             <h3>03. Ironclad Safety</h3>
-            <p>Liquidity locked. Contract verified. No mint. No rug.</p>
+            <p>Liquidity is locked. Smart contract verified. No mint. No rug. Only legacy.</p>
         </div>
     </div>
 
@@ -286,13 +304,13 @@ footer {
 </section>
 
 <section class="section" id="chart">
-    <h2 style="text-align:center;">LIVE MARKET DATA</h2>
+    <h2 style="text-align:center;">MARKET DATA</h2>
 
     <div class="chart-box">
         <iframe 
-            src="https://dexscreener.com/polygon/0xa6a2ff1c65152030493030bd4db28d73b53db05c?embed=1&theme=dark"
-            width="100%" 
-            height="100%" 
+            src="https://coinbrain.com/embed/polygon-0xa6a2ff1c65152030493030bd4db28d73b53db05c?theme=dark&chart=1&trades=1"
+            width="100%"
+            height="100%"
             style="border:none;">
         </iframe>
     </div>
@@ -306,7 +324,7 @@ footer {
 <script>
 function copyAddr() {
     navigator.clipboard.writeText('0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C');
-    alert('Contract Copied!');
+    alert('Contract Copied to clipboard!');
 }
 </script>
 
