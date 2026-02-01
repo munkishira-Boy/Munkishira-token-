@@ -7,13 +7,12 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
 <style>
 :root {
     --primary: #f39c12;
+    --bg: #050505;
     --text: #ffffff;
+    --secondary: #111111;
 }
 
 /* BASE */
@@ -34,6 +33,7 @@ body {
     background: url("background.png") center center / cover no-repeat;
     z-index: -2;
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -57,6 +57,7 @@ header {
     border-bottom: 1px solid #222;
     backdrop-filter: blur(10px);
 }
+
 .logo {
     font-size: 1.2rem;
     font-weight: 900;
@@ -64,104 +65,159 @@ header {
     letter-spacing: 3px;
 }
 
+/* NAV */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
 /* HERO */
 .hero {
     text-align: center;
     padding: 140px 5% 120px;
 }
+
 .hero h1 {
     font-size: 4rem;
     margin: 0;
+    letter-spacing: -2px;
     text-shadow: 0px 0px 30px rgba(0,0,0,0.8);
 }
+
 .hero p {
+    font-size: 1.2rem;
     color: #ccc;
     max-width: 700px;
     margin: 20px auto;
 }
 
-/* CHAT WINDOW */
-.chat-box {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 320px;
-    height: 420px;
-    background: rgba(10,10,10,0.95);
-    border-radius: 15px;
-    border: 1px solid var(--primary);
-    display: flex;
-    flex-direction: column;
-    z-index: 9999;
-    box-shadow: 0 0 20px rgba(243,156,18,0.4);
+/* BUTTON */
+.btn-x {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
-.chat-header {
+.btn-x:hover {
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* CARDS */
+.whitepaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.wp-card {
+    background: rgba(15,15,15,0.9);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid #222;
+    backdrop-filter: blur(10px);
+}
+
+.wp-card h3 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+/* TOKENOMICS */
+.tokenomics {
     background: var(--primary);
     color: black;
-    padding: 10px;
-    font-weight: bold;
+    border-radius: 30px;
+    padding: 50px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap;
 }
 
-.chat-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: 0.85rem;
+.tk-item h4 {
+    font-size: 2.5rem;
+    margin: 0;
 }
 
-.chat-input {
-    display: flex;
-}
-.chat-input input {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    background: #000;
-    color: white;
-}
-.chat-input button {
-    background: var(--primary);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* NICKNAME SCREEN */
-.nickname-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-}
-
-.nickname-box {
-    background: #111;
+/* CONTRACT */
+.contract-section {
+    text-align: center;
     padding: 40px;
+    background: rgba(15,15,15,0.9);
     border-radius: 20px;
-    border: 1px solid var(--primary);
-    text-align: center;
-}
-.nickname-box input {
-    padding: 10px;
-    margin-top: 10px;
-    width: 200px;
-}
-.nickname-box button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: var(--primary);
-    border: none;
-    cursor: pointer;
+    margin-top: 40px;
 }
 
+.copy-box {
+    background: #000;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    font-family: monospace;
+    margin-top: 15px;
+}
+
+.copy-box:hover {
+    background: var(--primary);
+    color: black;
+}
+
+/* CHART */
+.chart-box {
+    background: black;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #222;
+    height: 700px;
+    margin-top: 40px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 60px;
+    border-top: 1px solid #222;
+    color: #666;
+    background: rgba(0,0,0,0.8);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .chart-box {
+        height: 500px;
+    }
+}
 </style>
 </head>
 <body>
@@ -171,85 +227,87 @@ header {
 
 <header>
     <div class="logo">MUNKISHIRA</div>
+    <div class="nav-links">
+        <a href="https://x.com/Munkishiroboy" target="_blank">TWITTER</a>
+        <a href="#chart">LIVE CHART</a>
+    </div>
 </header>
 
 <section class="hero">
     <h1>MUNKIBOY'S LEGACY</h1>
-    <p>Digital scarcity governed by the growth of a physical Munkidori Master Collection.</p>
+    <p>The first algorithmic protocol where digital scarcity is governed by the growth of a physical Munkidori Master Collection.</p>
+
+    <a href="https://x.com/Munkishiroboy" class="btn-x" target="_blank">
+        <i class="fab fa-x-twitter"></i> Follow Community
+    </a>
 </section>
 
-<!-- NICKNAME SCREEN -->
-<div class="nickname-screen" id="nickScreen">
-    <div class="nickname-box">
-        <h3>Choose Your Nickname</h3>
-        <input id="nicknameInput" placeholder="Enter name..." maxlength="16">
-        <br>
-        <button onclick="setNickname()">ENTER CHAT</button>
-    </div>
-</div>
+<section class="section">
+    <div class="whitepaper-grid">
+        <div class="wp-card">
+            <h3>01. Physical Oracle</h3>
+            <p>Every time a rare Munkidori card is added to the vault, the protocol initiates a Sacrifice Event.</p>
+        </div>
 
-<!-- CHAT -->
-<div class="chat-box">
-    <div class="chat-header">🔥 LIVE CHAT</div>
-    <div class="chat-messages" id="messages"></div>
-    <div class="chat-input">
-        <input id="messageInput" placeholder="Type message...">
-        <button onclick="sendMessage()">SEND</button>
+        <div class="wp-card">
+            <h3>02. The Burn Engine</h3>
+            <p>Supply collapses as the physical collection expands, creating aggressive deflation.</p>
+        </div>
+
+        <div class="wp-card">
+            <h3>03. Ironclad Safety</h3>
+            <p>Liquidity locked. Contract verified. No mint. No rug.</p>
+        </div>
     </div>
-</div>
+
+    <div class="tokenomics">
+        <div class="tk-item">
+            <h4>300K</h4>
+            <p>Total Supply</p>
+        </div>
+
+        <div class="tk-item">
+            <h4>0.8%</h4>
+            <p>Transaction Fee</p>
+        </div>
+
+        <div class="tk-item">
+            <h4>100%</h4>
+            <p>Liquidity Locked</p>
+        </div>
+    </div>
+
+    <div class="contract-section">
+        <h3>OFFICIAL CONTRACT ADDRESS</h3>
+        <div class="copy-box" onclick="copyAddr()">
+            0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C <i class="fas fa-copy"></i>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="chart">
+    <h2 style="text-align:center;">LIVE MARKET DATA</h2>
+
+    <div class="chart-box">
+        <iframe 
+            src="https://dexscreener.com/polygon/0xa6a2ff1c65152030493030bd4db28d73b53db05c?embed=1&theme=dark"
+            width="100%" 
+            height="100%" 
+            style="border:none;">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <p>MUNKISHIRA PROJECT © 2024 | POWERED BY POLYGON NETWORK</p>
+    <p>Managed by Munkiboy - Root Theory Foundation</p>
+</footer>
 
 <script>
-/* FIREBASE CONFIG — INCOLLA QUI LE TUE CHIAVI */
-const firebaseConfig = {
-  apiKey: "INCOLLA_APIKEY",
-  authDomain: "INCOLLA_AUTHDOMAIN",
-  projectId: "INCOLLA_PROJECTID",
-  storageBucket: "INCOLLA_STORAGE",
-  messagingSenderId: "INCOLLA_SENDERID",
-  appId: "INCOLLA_APPID"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-let nickname = "";
-
-function setNickname() {
-    const input = document.getElementById("nicknameInput");
-    if (!input.value) return alert("Enter a nickname");
-    nickname = input.value;
-    document.getElementById("nickScreen").style.display = "none";
+function copyAddr() {
+    navigator.clipboard.writeText('0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C');
+    alert('Contract Copied!');
 }
-
-/* SEND MESSAGE */
-function sendMessage() {
-    const input = document.getElementById("messageInput");
-    if (!input.value) return;
-
-    db.collection("chat").add({
-        user: nickname,
-        text: input.value,
-        time: Date.now()
-    });
-
-    input.value = "";
-}
-
-/* RECEIVE MESSAGES */
-db.collection("chat")
-.orderBy("time")
-.limit(100)
-.onSnapshot(snapshot => {
-    const messages = document.getElementById("messages");
-    messages.innerHTML = "";
-    snapshot.forEach(doc => {
-        const msg = doc.data();
-        const div = document.createElement("div");
-        div.innerHTML = `<strong>${msg.user}:</strong> ${msg.text}`;
-        messages.appendChild(div);
-    });
-    messages.scrollTop = messages.scrollHeight;
-});
 </script>
 
 </body>
