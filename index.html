@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Munkishira | Munkiboy Official</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #f39c12; /* Arancione Munkidori */
+            --primary: #f39c12; 
             --bg: #0b0b0b;
             --text: #ffffff;
             --secondary: #1a1a1a;
+            --accent: #27ae60;
         }
 
         body {
@@ -25,10 +27,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 2px solid var(--primary);
         }
 
         .logo {
@@ -41,67 +44,80 @@
 
         .hero {
             text-align: center;
-            padding: 100px 5%;
-            background: linear-gradient(to bottom, #1a1a1a, #0b0b0b);
+            padding: 80px 5%;
+            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+        .hero h1 { font-size: 3.5rem; margin: 0; color: var(--primary); text-shadow: 2px 2px 10px rgba(243, 156, 18, 0.3); }
+        .hero p { font-size: 1.3rem; color: #ddd; max-width: 800px; margin: 20px auto; }
+
+        .contract-container {
+            margin: 30px auto;
+            max-width: 700px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: #ccc;
-        }
-
-        .section {
-            padding: 60px 5%;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .info-card {
+        .contract-box {
             background: var(--secondary);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #333;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .info-card:hover {
-            border-color: var(--primary);
+        .contract-box:hover { border-color: var(--primary); background: #222; }
+        .contract-box code { font-size: 0.9rem; color: var(--primary); overflow-wrap: anywhere; }
+
+        .status-badge {
+            background: var(--accent);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(39, 174, 96, 0.4);
         }
 
-        .info-card h3 {
-            color: var(--primary);
-            margin-top: 0;
+        .section { padding: 60px 5%; max-width: 1200px; margin: auto; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .chart-placeholder {
-            width: 100%;
-            height: 400px;
-            background: #1a1a1a;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed #444;
-            margin-top: 20px;
-        }
-
-        .footer {
-            text-align: center;
+        .info-card {
+            background: #151515;
             padding: 40px;
-            font-size: 0.9rem;
-            color: #666;
+            border-radius: 25px;
+            border-bottom: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover { transform: translateY(-10px); }
+        .info-card h3 { color: var(--primary); font-size: 1.5rem; margin-top: 0; }
+        .info-card i { font-size: 2rem; margin-bottom: 15px; color: var(--primary); }
+
+        .chart-section { background: #000; padding: 40px 0; }
+        .chart-container {
+            width: 90%;
+            max-width: 1100px;
+            height: 650px;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .footer { text-align: center; padding: 60px; color: #666; border-top: 1px solid #222; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .chart-container { height: 450px; }
         }
     </style>
 </head>
@@ -109,36 +125,65 @@
 
     <header>
         <div class="logo">MUNKISHIRA</div>
+        <div class="status-badge"><i class="fas fa-shield-alt"></i> LIQUIDITY LOCKED</div>
     </header>
 
     <section class="hero">
-        <h1>Munkiboy's Legacy</h1>
-        <p>Il primo progetto crypto guidato dalla rarità delle carte Pokémon Munkidori.</p>
-    </section>
-
-    <section class="section">
-        <div class="card-container">
-            <div class="info-card">
-                <h3>Chi è Munkiboy?</h3>
-                <p>Munkiboy è il collezionista e creatore. La sua missione è raccogliere ogni carta Munkidori esistente, legando la crescita della collezione fisica al valore del token Munkishira.</p>
-            </div>
-            <div class="info-card">
-                <h3>Munkidori Burn Engine</h3>
-                <p>Funziona così: ogni volta che una nuova carta Munkidori viene aggiunta alla collezione reale, una percentuale massiccia di token viene bruciata (Burn), rendendo Munkishira sempre più raro.</p>
+        <h1>MUNKIBOY PROTOCOL</h1>
+        <p>L'unico ecosistema dove il valore digitale di <strong>$KISHI</strong> è legato alla rarità fisica della collezione Munkidori.</p>
+        
+        <div class="contract-container">
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 10px;">Indirizzo del Contratto (Polygon):</p>
+            <div class="contract-box" onclick="copyContract()">
+                <code id="contractAddr">0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C</code>
+                <i class="fas fa-copy" style="color: var(--primary);"></i>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <h2>Andamento del Mercato</h2>
-        <div class="chart-placeholder">
-            <p>[GRAFICO DEX IN ARRIVO - FASE 2]</p>
+        <div class="grid">
+            <div class="info-card">
+                <i class="fas fa-fire-alt"></i>
+                <h3>Burn Reale</h3>
+                <p>Io sono <strong>Munkiboy</strong>. La mia missione è collezionare ogni carta Munkidori. Più la mia collezione cresce, più token vengono rimossi dal mercato per sempre. Scarsità garantita.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Liquidità Protetta</h3>
+                <p>La liquidità è bloccata. I bot stanno già scansionando il protocollo, ma il vero potenziale è riservato a chi crede nel progetto fin dalle "Radici".</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="chart-section">
+        <h2 style="text-align: center; margin-bottom: 30px;">Live Market Analysis</h2>
+        <div class="chart-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://dexscreener.com/polygon/0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C?embed=1&theme=dark&trades=0&info=0" 
+                style="border:0;">
+            </iframe>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Munkishira Project | Created by Munkiboy</p>
+        <p>Munkishira Project &copy; 2024 | Built on Polygon Network</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Managed by Munkiboy - Follow the Root Theory</p>
     </footer>
+
+    <script>
+        function copyContract() {
+            const el = document.createElement('textarea');
+            el.value = '0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('Contratto Copiato!');
+        }
+    </script>
 
 </body>
 </html>
