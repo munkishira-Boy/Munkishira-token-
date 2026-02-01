@@ -1,335 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>Munkidori Cultural Registry — Kishi Munkishira</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munkishira | Munkiboy Official</title>
+    <style>
+        :root {
+            --primary: #f39c12; /* Arancione Munkidori */
+            --bg: #0b0b0b;
+            --text: #ffffff;
+            --secondary: #1a1a1a;
+        }
 
-<meta name="description" content="The Munkidori Cultural Registry. A physical mythic card collection connected to a digital scarcity layer on Polygon through the KISHI token." />
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
 
-<style>
-:root {
-  --bg: #070707;
-  --paper: #0e0e0e;
-  --border: #1e1e1e;
-  --gold: #c7b27c;
-  --text: #e4e4e4;
-  --muted: #9a9a9a;
-}
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-* { box-sizing: border-box; }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Georgia", "Times New Roman", serif;
-  letter-spacing: 0.4px;
-  line-height: 1.8;
-}
+        .hero {
+            text-align: center;
+            padding: 100px 5%;
+            background: linear-gradient(to bottom, #1a1a1a, #0b0b0b);
+        }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(7,7,7,0.95);
-  border-bottom: 1px solid var(--border);
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
 
-header .left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 0.9em;
-  color: var(--muted);
-}
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
 
-header img {
-  height: 38px;
-  filter: drop-shadow(0 0 6px var(--gold));
-}
+        .section {
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-nav a {
-  margin-left: 25px;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.85em;
-}
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-nav a:hover {
-  color: var(--gold);
-}
+        .info-card {
+            background: var(--secondary);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
 
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 120px 25px;
-}
+        .info-card:hover {
+            border-color: var(--primary);
+        }
 
-.hero {
-  text-align: center;
-  padding-top: 180px;
-}
+        .info-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
 
-.hero img {
-  height: 140px;
-  margin-bottom: 40px;
-  filter: drop-shadow(0 0 18px var(--gold));
-}
+        .chart-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #1a1a1a;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #444;
+            margin-top: 20px;
+        }
 
-.hero h1 {
-  font-weight: normal;
-  font-size: 2.4em;
-  letter-spacing: 3px;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: auto;
-  color: var(--muted);
-  font-size: 1.05em;
-}
-
-.block {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  padding: 50px;
-  margin-top: 40px;
-}
-
-h2 {
-  color: var(--gold);
-  font-weight: normal;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
-}
-
-.columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  border: 1px solid var(--border);
-  padding: 25px;
-  background: #0a0a0a;
-}
-
-.card strong {
-  color: var(--gold);
-}
-
-.market {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.market-box {
-  border: 1px solid var(--border);
-  padding: 30px;
-  text-align: center;
-  background: #0b0b0b;
-}
-
-.market-box a {
-  display: inline-block;
-  margin-top: 15px;
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
-.market-box a:hover {
-  text-decoration: underline;
-}
-
-.registry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-}
-
-.registry-item {
-  height: 200px;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 0.85em;
-  background: #0a0a0a;
-}
-
-footer {
-  text-align: center;
-  padding: 80px 20px;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  font-size: 0.8em;
-}
-
-.copy {
-  color: var(--gold);
-  cursor: pointer;
-}
-</style>
+        .footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="left">
-    <img src="logo.png" alt="Munkidori Seal">
-    MUNKIDORI REGISTRY
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#scarcity">Scarcity</a>
-    <a href="#market">Market</a>
-    <a href="#registry">Registry</a>
-    <a href="#transparency">Transparency</a>
-  </nav>
-</header>
+    <header>
+        <div class="logo">MUNKISHIRA</div>
+    </header>
 
-<section class="hero">
-  <img src="logo.png" alt="Munkidori Emblem">
-  <h1>KISHI MUNKISHIRA</h1>
-  <p>
-    A cultural registry connecting a private physical mythic card collection
-    to a public digital scarcity layer on the Polygon network.
-  </p>
-</section>
+    <section class="hero">
+        <h1>Munkiboy's Legacy</h1>
+        <p>Il primo progetto crypto guidato dalla rarità delle carte Pokémon Munkidori.</p>
+    </section>
 
-<section id="about">
-  <div class="block">
-    <h2>What This Is</h2>
-    <p>
-      Munkidori is a private physical collection of mythic cards curated by its creator.
-      Each artifact represents a cultural entry within a growing archive.
-    </p>
-    <p>
-      KISHI Munkishira functions as the economic and digital layer of this archive.
-      Its supply reflects the expansion of the physical collection through a
-      permanent on-chain reduction mechanism.
-    </p>
-  </div>
-</section>
+    <section class="section">
+        <div class="card-container">
+            <div class="info-card">
+                <h3>Chi è Munkiboy?</h3>
+                <p>Munkiboy è il collezionista e creatore. La sua missione è raccogliere ogni carta Munkidori esistente, legando la crescita della collezione fisica al valore del token Munkishira.</p>
+            </div>
+            <div class="info-card">
+                <h3>Munkidori Burn Engine</h3>
+                <p>Funziona così: ogni volta che una nuova carta Munkidori viene aggiunta alla collezione reale, una percentuale massiccia di token viene bruciata (Burn), rendendo Munkishira sempre più raro.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="scarcity">
-  <div class="block">
-    <h2>How Scarcity Is Created</h2>
-    <div class="columns">
-      <div class="card">
-        <strong>1. Physical Acquisition</strong>
-        <p>
-          A new Munkidori card is added to the creator’s private collection.
-        </p>
-      </div>
-      <div class="card">
-        <strong>2. Cultural Registration</strong>
-        <p>
-          The acquisition is documented within the public cultural registry.
-        </p>
-      </div>
-      <div class="card">
-        <strong>3. On-Chain Reduction</strong>
-        <p>
-          A corresponding quantity of KISHI is permanently removed from circulation
-          through an irreversible blockchain transaction.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="section">
+        <h2>Andamento del Mercato</h2>
+        <div class="chart-placeholder">
+            <p>[GRAFICO DEX IN ARRIVO - FASE 2]</p>
+        </div>
+    </section>
 
-<section id="market">
-  <div class="block">
-    <h2>Polygon Market Layer</h2>
-    <div class="market">
-      <div class="market-box">
-        KISHI / WPOL
-        <a href="https://dexscreener.com/polygon" target="_blank">View Market</a>
-      </div>
-      <div class="market-box">
-        KISHI / WUSDC
-        <a href="https://dexscreener.com/polygon" target="_blank">View Market</a>
-      </div>
-      <div class="market-box">
-        KISHI / WBTC
-        <a href="https://dexscreener.com/polygon" target="_blank">View Market</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="registry">
-  <div class="block">
-    <h2>Private Archive — Public View</h2>
-    <p>
-      The Munkidori registry displays a visual record of cards held in the
-      creator’s collection. This archive does not represent ownership transfer,
-      but cultural presence.
-    </p>
-
-    <div class="registry-grid">
-      <div class="registry-item">Munkidori #001</div>
-      <div class="registry-item">Munkidori #002</div>
-      <div class="registry-item">Munkidori #003</div>
-      <div class="registry-item">Munkidori #004</div>
-      <div class="registry-item">Munkidori #005</div>
-      <div class="registry-item">Munkidori #006</div>
-    </div>
-  </div>
-</section>
-
-<section id="transparency">
-  <div class="block">
-    <h2>Transparency & Network</h2>
-    <p>
-      KISHI operates on the Polygon network. All supply reductions, transfers,
-      and liquidity positions remain publicly verifiable.
-    </p>
-
-    <p>
-      Contract Address:<br>
-      <span class="copy" id="copy">
-        0xa6a2ff1c65152030493030bd4db28d73b53db05c
-      </span>
-    </p>
-
-    <p>
-      Explorer:<br>
-      <a href="https://polygonscan.com/token/0xa6a2ff1c65152030493030bd4db28d73b53db05c"
-         target="_blank"
-         style="color:var(--gold)">
-         View on PolygonScan
-      </a>
-    </p>
-  </div>
-</section>
-
-<footer>
-  Munkidori Cultural Registry — Polygon Network  
-  <br>
-  This project represents a cultural and experimental digital asset layer.
-</footer>
-
-<script>
-const contract = "0xa6a2ff1c65152030493030bd4db28d73b53db05c";
-document.getElementById("copy").onclick = () => {
-  navigator.clipboard.writeText(contract);
-  alert("Contract address copied");
-};
-</script>
+    <footer class="footer">
+        <p>&copy; 2024 Munkishira Project | Created by Munkiboy</p>
+    </footer>
 
 </body>
 </html>
