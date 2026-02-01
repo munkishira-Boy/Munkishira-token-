@@ -10,17 +10,16 @@
 <style>
 :root {
     --primary: #f39c12;
-    --bg: #050505;
     --text: #ffffff;
-    --secondary: #111111;
+    --bg: #050505;
 }
 
-/* BASE */
+/* BASE STYLES */
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
     color: var(--text);
-    background: black;
+    background: #000;
 }
 
 /* BACKGROUND */
@@ -59,13 +58,13 @@ header {
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 900;
     color: var(--primary);
+    text-transform: uppercase;
     letter-spacing: 3px;
 }
 
-/* NAV */
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -80,7 +79,7 @@ header {
     color: var(--primary);
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
     text-align: center;
     padding: 140px 5% 120px;
@@ -100,7 +99,6 @@ header {
     margin: 20px auto;
 }
 
-/* BUTTON */
 .btn-x {
     background: white;
     color: black;
@@ -181,8 +179,8 @@ header {
     display: inline-block;
     border: 1px solid var(--primary);
     cursor: pointer;
-    font-family: monospace;
     margin-top: 15px;
+    font-family: monospace;
 }
 
 .copy-box:hover {
@@ -190,7 +188,7 @@ header {
     color: black;
 }
 
-/* CHART */
+/* LIVE CHART */
 .chart-box {
     background: black;
     border-radius: 30px;
@@ -222,6 +220,7 @@ footer {
 </head>
 <body>
 
+<!-- BACKGROUND -->
 <div class="background"></div>
 <div class="overlay"></div>
 
@@ -236,7 +235,6 @@ footer {
 <section class="hero">
     <h1>MUNKIBOY'S LEGACY</h1>
     <p>The first algorithmic protocol where digital scarcity is governed by the growth of a physical Munkidori Master Collection.</p>
-
     <a href="https://x.com/Munkishiroboy" class="btn-x" target="_blank">
         <i class="fab fa-x-twitter"></i> Follow Community
     </a>
@@ -246,17 +244,17 @@ footer {
     <div class="whitepaper-grid">
         <div class="wp-card">
             <h3>01. Physical Oracle</h3>
-            <p>Every time a rare Munkidori card is added to the vault, the protocol initiates a Sacrifice Event.</p>
+            <p>Every time a rare Munkidori card is added to the vault, the protocol initiates a Sacrifice Event bridging physical and digital value.</p>
         </div>
 
         <div class="wp-card">
             <h3>02. The Burn Engine</h3>
-            <p>Supply collapses as the physical collection expands, creating aggressive deflation.</p>
+            <p>Unlike meme coins, $KISHI supply collapses as the collection grows, creating aggressive deflationary pressure.</p>
         </div>
 
         <div class="wp-card">
             <h3>03. Ironclad Safety</h3>
-            <p>Liquidity locked. Contract verified. No mint. No rug.</p>
+            <p>Liquidity locked. Contract verified. No mint. No rug. Just legacy with community.</p>
         </div>
     </div>
 
@@ -265,12 +263,10 @@ footer {
             <h4>300K</h4>
             <p>Total Supply</p>
         </div>
-
         <div class="tk-item">
             <h4>0.8%</h4>
             <p>Transaction Fee</p>
         </div>
-
         <div class="tk-item">
             <h4>100%</h4>
             <p>Liquidity Locked</p>
@@ -280,17 +276,16 @@ footer {
     <div class="contract-section">
         <h3>OFFICIAL CONTRACT ADDRESS</h3>
         <div class="copy-box" onclick="copyAddr()">
-            0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C <i class="fas fa-copy"></i>
+            0xaa464C4E2C2457dE8EEEe5e46Bd165BDf69608CA <i class="fas fa-copy"></i>
         </div>
     </div>
 </section>
 
 <section class="section" id="chart">
     <h2 style="text-align:center;">LIVE MARKET DATA</h2>
-
     <div class="chart-box">
         <iframe 
-            src="https://dexscreener.com/polygon/0xaa464c4e2c2457de8eeee5e46bd165bdf69608ca"
+            src="https://dexscreener.com/polygon/0xaa464c4e2c2457de8eeee5e46bd165bdf69608ca?embed=1&theme=dark"
             width="100%" 
             height="100%" 
             style="border:none;">
@@ -305,8 +300,8 @@ footer {
 
 <script>
 function copyAddr() {
-    navigator.clipboard.writeText('0xa6a2Ff1c65152030493030Bd4DB28D73B53db05C');
-    alert('Contract Copied!');
+    navigator.clipboard.writeText('0xaa464C4E2C2457dE8EEEe5e46Bd165BDf69608CA');
+    alert('Contract address copied!');
 }
 </script>
 
